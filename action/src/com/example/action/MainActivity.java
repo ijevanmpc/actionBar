@@ -18,13 +18,16 @@ import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class MainActivity extends Activity {
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	}
 
+	/**
+	 * @brief - This function is used to create Options Menu
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu items for use in the action bar
@@ -38,9 +41,11 @@ public class MainActivity extends Activity {
 	 */
 	private void showPopupMenu() {
 		View v = (View) findViewById(R.id.action_settings);
+		// Creating the instance of PopupMenu
 		PopupMenu popupMenu = new PopupMenu(this, v);
 		popupMenu.getMenuInflater().inflate(R.menu.main, popupMenu.getMenu());
 
+		// registering popup with OnMenuItemClickListener
 		popupMenu
 				.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
@@ -51,9 +56,12 @@ public class MainActivity extends Activity {
 						return true;
 					}
 				});
-		popupMenu.show();
+		popupMenu.show();// showing popup menu
 	}
 
+	/**
+	 * @brief - This function is used to call showPopupMenu function when item is selected
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
