@@ -10,8 +10,15 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+/**
+ * This activity is used to show ActionBar with popupMenu
+ * 
+ * @authors: Lilit & Serine
+ */
+
 @SuppressLint("NewApi")
 public class MainActivity extends Activity {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,6 +33,9 @@ public class MainActivity extends Activity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	/**
+	 * @brief - This function is used to show popupMenu
+	 */
 	private void showPopupMenu() {
 		View v = (View) findViewById(R.id.action_settings);
 		PopupMenu popupMenu = new PopupMenu(this, v);
